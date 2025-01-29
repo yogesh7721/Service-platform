@@ -5,9 +5,9 @@ const cors = require("cors")
 const mongoose = require("mongoose")
 require("dotenv").config()  ///sensitive  data 
 const path = require('path')
-const { app, httpServer } = require("./socket/socket")
-// const app = express()
 
+
+const app = express()
 app.use(express.json())
 app.use(express.static("dist"))
 app.use(cookieParser())
