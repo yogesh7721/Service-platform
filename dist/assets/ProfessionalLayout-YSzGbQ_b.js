@@ -1,0 +1,1 @@
+import{j as r,O as s}from"./index-BNJ1e2Nx.js";import o from"./ProfessionalNavbar-C_FJrcJ3.js";import"./index.esm-BtAuM_03.js";const i=()=>r.jsxs(r.Fragment,{children:[r.jsx(o,{}),r.jsx(s,{})]});export{i as default};
