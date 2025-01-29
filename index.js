@@ -4,11 +4,12 @@ const express = require("express")
 const cors = require("cors")
 const mongoose = require("mongoose")
 require("dotenv").config()  ///sensitive  data 
-
+const path = require('path')
 const { app, httpServer } = require("./socket/socket")
 // const app = express()
 
 app.use(express.json())
+app.use(express.static("dist"))
 app.use(cookieParser())
 
 app.use(cors({
@@ -24,7 +25,8 @@ app.use("/api/professional", require("./routes/Professionals.routes"))
 app.use("/api/customer", require("./routes/Customer.routes"))
 
 app.use("*", (req, res) => {
-    res.status(404).json({ message: "Resource Not Found...!" })
+    res.sendFile(path.join(__dirname, "dist", "index.html"))
+    // res.status(404).json({ message: "Resource Not Found...!" })
 })
 mongoose.connect(process.env.MONGO_URL)
 
